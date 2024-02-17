@@ -1,0 +1,207 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden; /* Prevent scrollbars due to video size */
+    background-color: red;
+}
+
+#background-video {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    object-fit: cover;
+    transform: translate(-50%, -40%);
+    z-index: -1; /* Place the video behind other content */
+}
+
+#background-video::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Black overlay with 0.5 opacity */
+    z-index: 0; /* Place the overlay behind other content */
+}
+
+/* Rest of your existing styles */
+.announcement-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    z-index: 100;
+}
+
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.hero-content {
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.hero-title img {
+    text-align: center;
+    padding-left: 0px;
+    max-height: 250px;
+    filter: invert(1); /* Inverts the colors of the image */
+}
+
+.hero-subtitle-button{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Helvetica';
+    font-weight: 600;
+    font-size: 25px;
+    margin-top: -20px;
+}
+
+.hero-links {
+    display: flex;
+   
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.hero-links {
+    display: flex;
+    gap: 20px;
+}
+
+.hero-links div svg {
+    height: 30px;
+}
+
+
+@keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+
+  .marquee-container {
+    color: white;
+    animation: marquee 15s linear infinite; /* Adjust the duration as needed */
+  }
+
+  .hero-subtitle-button {
+    display: inline-block;
+    position: relative;
+    padding: 10px 20px;
+    color: #fff;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .hero-subtitle-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    background-color: black;
+    transition: left 0.3s ease;
+    z-index: -1; /* Push the backdrop behind the text */
+  }
+
+  .hero-subtitle-button:hover::before {
+    left: 0;
+  }
+
+  .store-main {
+    display: flex;
+    justify-content: start;
+    margin-top: 50px;
+    align-items: start;
+    flex-direction: row;
+    
+  }
+
+  .sidebar-title  {
+    display: flex;
+    justify-content: center;
+    padding-left: 0px;
+    max-height: 100px;
+}
+
+  .sidebar-title img {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    padding-left: 0px;
+    max-height: 100px;
+}
+  .sidebar {
+    position: fixed;
+    display: flex;
+    width: 300px;
+    justify-content: start;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background-color: white;
+    z-index: 10;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2); /* Add a subtle box-shadow to the right */
+  }
+
+  .sidebar-menu{
+    display: flex;
+    margin-top: 40px;
+    flex-direction: column;
+    gap: 25px;
+    text-align: center;
+    list-style: none;
+    text-transform: uppercase;
+    padding: 0px;
+  }
+
+  .sidebar-menu li{
+  
+    padding: 10px;
+  }
+
+  .sidebar-menu .active{
+    background-color: black;
+    color: white;
+    padding: 10px;
+  }
+
+  .store-section {
+    margin-left: 300px;
+    width: calc(100% - 300px); /* Adjusted width to fill remaining space */
+    overflow-y: auto;
+    height: 100vh; /* Set a fixed height */
+    margin-bottom: 200px
+}
+
+.store-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    padding: 40px 20px 100px 20px; 
+}
+
+.store-item {
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+    min-height: 350px;
+}
+
+/* Your existing styles */
+
